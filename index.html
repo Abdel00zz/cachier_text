@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cahier de Textes Numérique</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              serif: ['Roboto Slab', 'serif'],
+            },
+            colors: {
+              'primary': '#4361ee',
+              'primary-hover': '#3a56d4',
+              'secondary': '#4cc9f0',
+              'success': '#06d6a0',
+              'warning': '#f72585',
+              'danger': '#ef476f',
+              'info': '#118ab2',
+              'bg-color': '#f8f9fa',
+              'container-color': '#fff',
+              'header-bg': '#f2f2f7',
+              'text-color': '#2b2d42',
+              'text-light': '#6c757d',
+              'border-color': '#e9ecef',
+              'header-border': '#dadce0',
+              'table-border': '#d8dee4',
+              'shadow-color': 'rgba(0, 0, 0, 0.1)',
+              'badge-activite': '#a8dadc',
+              'badge-definition': '#c1e1c1',
+              'badge-theoreme': '#ffddd2',
+              'badge-proposition': '#b8c0ff',
+              'badge-lemme': '#d8bbff',
+              'badge-corollaire': '#f1dca7',
+              'badge-remarque': '#d0d1d5',
+              'badge-preuve': '#d1d1d1',
+              'badge-exemple': '#bee3db',
+              'badge-exercice': '#ffd6a5',
+              'badge-application': '#c9e4de',
+            },
+            borderRadius: {
+              'default': '8px',
+              'button': '6px',
+            },
+            animation: {
+              fadeIn: 'fadeIn 0.3s ease-in-out',
+              slideUp: 'slideUp 0.3s ease-in-out',
+              fadeInMenu: 'fadeInMenu 0.2s ease-out'
+            },
+            keyframes: {
+                fadeIn: { '0%': { opacity: 0 }, '100%': { opacity: 1 } },
+                slideUp: { '0%': { transform: 'translateY(20px)', opacity: 0 }, '100%': { transform: 'translateY(0)', opacity: 1 } },
+                fadeInMenu: { '0%': { opacity: 0, transform: 'translateY(-5px)' }, '100%': { opacity: 1, transform: 'translateY(0)' } }
+            }
+          }
+        }
+      }
+    </script>
+    <style type="text/css" media="print">
+      @page {
+        size: A4;
+        margin: 1.5cm;
+      }
+      body {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        font-size: 9.5pt;
+        background-color: #fff !important;
+        color: #000 !important;
+        line-height: 1.3;
+      }
+      .main-content {
+          overflow: visible !important;
+      }
+      table {
+          width: 100% !important;
+          border-collapse: collapse !important;
+          page-break-inside: auto;
+      }
+      tr {
+          page-break-inside: avoid;
+          page-break-after: auto;
+      }
+      thead {
+          display: table-header-group;
+      }
+
+      /* --- UPDATED BORDER LOGIC --- */
+      /* 1. Base cell styles */
+      th, td {
+          padding: 3px 5px !important;
+          vertical-align: top;
+          border-right: 1px solid #bbb !important; /* Add vertical column separator */
+      }
+      th:last-child, td:last-child {
+        border-right: none !important; /* Remove separator on last column */
+      }
+
+
+      /* 2. Style the header with a solid bottom line */
+      th {
+          font-weight: bold;
+          border-bottom: 2px solid #000 !important;
+      }
+
+      /* 3. Add a top border ONLY to rows with a date or manual separators */
+      tr.has-date-value > td,
+      tr.separator-row > td {
+          border-top: 1px solid #bbb !important;
+      }
+
+      /* Make manual separators stand out a bit */
+      tr.separator-row {
+          background-color: #f7f7f7 !important;
+      }
+
+      /* Reduce padding/margin inside cells for a tighter layout */
+      td > div, td > div > div {
+        padding-top: 1px !important;
+        padding-bottom: 1px !important;
+      }
+
+      /* Maintain indentation from tailwind classes */
+      td .pl-5 { padding-left: 0.75rem !important; }
+      td .pl-10 { padding-left: 1.5rem !important; }
+      td .pl-14 { padding-left: 2.25rem !important; }
+
+      /* Font size adjustments */
+      .text-xl { font-size: 13pt !important; font-weight: bold; }
+      .text-lg { font-size: 11pt !important; font-weight: bold; }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.1.1/",
+    "react": "https://esm.sh/react@^19.1.1",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.1/",
+    "better-react-mathjax": "https://esm.sh/better-react-mathjax@2.3.0",
+    "better-react-mathjax/": "https://esm.sh/better-react-mathjax@2.3.0/",
+    "@google/genai": "https://esm.sh/@google/genai"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-bg-color font-sans text-text-color p-5 min-h-screen print:bg-white">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

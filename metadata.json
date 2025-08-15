@@ -1,0 +1,5 @@
+{
+  "name": "Cahier de Textes Numérique",
+  "description": "An intelligent and interactive digital logbook for teachers to organize and track class sessions, assignments, and content. Features include rich text editing, dynamic content creation, data persistence, undo/redo, and JSON import/export.",
+  "requestFramePermissions": []
+}
