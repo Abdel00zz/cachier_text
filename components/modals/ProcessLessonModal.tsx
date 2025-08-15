@@ -289,12 +289,12 @@ Convertir un document de cours de mathématiques en un fichier JSON pour un "cah
 
             setLoadingMessage("Analyse du document en cours... (cela peut prendre 30-60 secondes)");
             const response : GenerateContentResponse = await ai.models.generateContent({
-                model: 'gemini-2.5-flash',
+                model: 'gemini-2.5-pro',
                 contents: { parts: [{ text: prompt }, filePart] },
                 config: {
                     responseMimeType: "application/json",
                     responseSchema: lessonsDataSchema,
-                    temperature: 0.1, // Réduire la créativité pour plus de précision
+                    temperature: 0.3, // Réduire la créativité pour plus de précision
                     topP: 0.95,
                 },
             });
